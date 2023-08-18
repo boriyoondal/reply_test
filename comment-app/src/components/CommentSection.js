@@ -47,6 +47,7 @@ function CommentSection() {
 
     return () => clearInterval(interval); // 컴포넌트 unmount 시 타이머 해제
   }, []);
+
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, "comments"), (snapshot) => {
       setComments(snapshot.docs.map((doc) => doc.data()));
@@ -64,6 +65,7 @@ function CommentSection() {
       });
 
       setComment("");
+      alert("댓글 등록 완!");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
@@ -104,7 +106,6 @@ function CommentSection() {
               {comment?.nickname?.length === 0
                 ? "닉넴등록안함"
                 : comment.nickname}
-              :
             </strong>
             <p className="commentform">댓글: {comment.text}</p>
           </div>
