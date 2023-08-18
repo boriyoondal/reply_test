@@ -70,10 +70,10 @@ function CommentSection() {
   };
   return (
     <div>
-      <img src={choo} alt="추" />
+      <img src={choo} alt="추" className="img-responsive" />
 
-      <h1>온 지구가 당신의 셍일을 축하합니다!</h1>
-      <h2>
+      <h1 className="textview">온 지구가 당신의 셍일을 축하합니다!</h1>
+      <h2 className="commentform">
         추이생일 {timeLeft.days}일 {timeLeft.hours}시간 {timeLeft.minutes}분{" "}
         {timeLeft.seconds}초 남았습니다.
       </h2>
