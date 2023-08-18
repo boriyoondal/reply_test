@@ -4,7 +4,7 @@ import {
   addDoc,
   collection,
   serverTimestamp,
-  firebase,
+  //   firebase,
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../firebase";
