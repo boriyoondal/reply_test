@@ -82,21 +82,32 @@ function CommentSection() {
         <input
           type="text"
           value={nickname}
+          className="input"
           onChange={(e) => setNickname(e.target.value)}
-          placeholder="닉네임" // 닉네임 입력 필드
+          placeholder="닉네임입력ㄱㄱ" // 닉네임 입력 필드
         />
         <textarea
           value={comment}
+          className="textarea"
           onChange={(e) => setComment(e.target.value)}
         ></textarea>
-        <button onClick={addComment}>등록</button>
+        <button className="button" onClick={addComment}>
+          등록
+        </button>
       </div>
-      <div>
-        <span>댓글목록</span>
+      <strong>댓글목록</strong>
+      <div className=" w-full">
         {comments.map((comment, index) => (
-          <div key={index}>
-            <strong>{comment.nickname}:</strong> {comment.text}{" "}
+          <div key={index} className="comment-row">
             {/* 닉네임 표시 */}
+            <strong className="commentform">
+              닉넴:
+              {comment?.nickname?.length === 0
+                ? "닉넴등록안함"
+                : comment.nickname}
+              :
+            </strong>
+            <p className="commentform">댓글: {comment.text}</p>
           </div>
         ))}
       </div>
